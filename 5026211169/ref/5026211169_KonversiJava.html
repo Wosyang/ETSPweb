@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Compute Methods</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      function FtoC() {
+        var degreeF = parseFloat(document.getElementById("degreeF").value);
+        var hasilFtoC = ((degreeF - 32) * 5) / 9 + " C";
+
+        console.log("Fahrenheit to Celcius : " + hasilFtoC);
+        document.getElementById("hasilFtoC").innerHTML = hasilFtoC;
+      }
+      function CtoF() {
+        var degreeC = parseFloat(document.getElementById("degreeC").value);
+        var hasilCtoF = (degreeC * 9) / 5 + 32 + " F";
+
+        console.log("Celcius to Fahrenheit : " + hasilCtoF);
+        document.getElementById("hasilCtoF").innerHTML = hasilCtoF;
+      }
+      function hypotenuse() {
+        var a = parseInt(document.getElementById("a").value);
+        var b = parseInt(document.getElementById("b").value);
+        var hasilHipo = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2)) + " cm";
+
+        console.log("Hypotenuse : " + hasilHipo);
+        document.getElementById("hasilHipo").innerHTML = hasilHipo;
+      }
+
+      function roll() {
+        var rnd2Dice = Math.floor(Math.random() * 12) + 1;
+
+        console.log("Dice Roll : " + rnd2Dice);
+        document.getElementById("rnd2Dice").innerHTML = rnd2Dice;
+      }
+    </script>
+    <style>
+      body {
+        background-image: url("5026211169_KonversiJava.jpg"); /* The image used */
+        background-color: #ffffff; /* Used if the image is unavailable */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; /* Resize the background image to cover the entire container */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container pt-5">
+      <div
+        class="jumbotron w-50 mx-auto"
+        style="background-color: rgb(187, 187, 187)"
+      >
+        <h1 class="text-center pm">Compute Methods</h1>
+        <div>
+          <div class="form-group">
+            <label for="degreeF">Fahrenheit To Celcius :</label>
+            <input
+              type="number"
+              class="form-control"
+              id="degreeF"
+              name="degreeF"
+              placeholder="Silahkan Masukan Angka Fahrenheit"
+            />
+            <button type="submit" class="btn btn-primary" onclick="FtoC();">
+              Submit
+            </button>
+            <p>Hasil : <span id="hasilFtoC"></span></p>
+          </div>
+          <div class="form-group">
+            <label for="degreeC">Celcius To Fahrenheit :</label>
+            <input
+              type="number"
+              class="form-control"
+              id="degreeC"
+              name="degreeC"
+              placeholder="Silahkan Masukan Tinggi Celcius"
+            />
+            <button type="submit" class="btn btn-primary" onclick="CtoF();">
+              Submit
+            </button>
+            <p>Hasil : <span id="hasilCtoF"></span></p>
+          </div>
+          <div class="form-group">
+            <label>Hypotenuse :</label>
+            <input
+              type="number"
+              class="form-control"
+              id="a"
+              name="a"
+              placeholder="Silahkan Masukan Tinggi"
+            />
+            <input
+              type="number"
+              class="form-control"
+              id="b"
+              name="b"
+              placeholder="Silahkan Masukan Lebar"
+            />
+            <button
+              type="submit"
+              class="btn btn-primary"
+              onclick="hypotenuse();"
+            >
+              Submit
+            </button>
+            <p>Hasil : <span id="hasilHipo"></span></p>
+          </div>
+          <div class="form-group">
+            <label for="pwd">Roll Dice:</label>
+            <button type="submit" class="btn btn-primary" onclick="roll();">
+              Submit
+            </button>
+            <p>Dice : <span id="rnd2Dice"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
